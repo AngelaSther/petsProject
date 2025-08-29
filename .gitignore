@@ -1,6 +1,3 @@
-# Arquivos de configuração sensíveis
-config.py
-
 # Cache do Python
 __pycache__/
 *.pyc
@@ -9,6 +6,8 @@ __pycache__/
 
 # Ambientes virtuais
 env/
+config.py
+migrations
 
 # Arquivos de IDE/Editor
 .vscode/

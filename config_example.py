@@ -1,7 +1,7 @@
-class Config:
-  DEBUG = True
+# class Config:
+#   DEBUG = True
 
-  SQLALCHEMY_DATABASE_URI = "postgresql://user:password@localhost:5432/database"
-  SQLALCHEMY_TRACK_MODIFICATIONS = False
+#   SQLALCHEMY_DATABASE_URI = "postgresql://user:password@localhost:5432/database"
+#   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-  SECRET_KEY = 'sua_secret_key'
+#   SECRET_KEY = 'sua_secret_key'

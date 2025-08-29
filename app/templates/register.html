@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+</head>
+<body>
+  <div class="cadastro-tutores">
+    <h2>Registro Tutores</h2>
+    <form action="" method="post">
+      {{ register.csrf_token }}
+
+      {{ register.username (placeholder='username') }}
+      {{ register.email (placeholder='email') }}
+      {{ register.cpf (placeholder='cpf') }}
+      {{ register.endereco (placeholder='endereco') }}
+      {{ register.password (placeholder='password') }}
+
+      <button>Submit</button>
+
+    </form>
+  </div>
+</body>
+</html>
