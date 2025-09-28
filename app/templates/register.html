@@ -5,21 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
 </head>
-<body>
-  <div class="cadastro-tutores">
-    <h2>Registro Tutores</h2>
-    <form action="" method="post">
-      {{ register.csrf_token }}
+<body data-tipo="{{ tipo_modal }}">
+  <div class="container">
+    <div id="modal-tutor" style="display: none;">
+      <form action="" method="post">
+        {{ register.csrf_token }}
 
-      {{ register.username (placeholder='username') }}
-      {{ register.email (placeholder='email') }}
-      {{ register.cpf (placeholder='cpf') }}
-      {{ register.endereco (placeholder='endereco') }}
-      {{ register.password (placeholder='password') }}
+        {{ register.username (placeholder='username') }}
+        {{ register.email (placeholder='email') }}
+        {{ register.cpf (placeholder='cpf') }}
+        {{ register.endereco (placeholder='endereco') }}
+        {{ register.password (placeholder='password') }}
+        <button type="submit" name="form_type" value="tutor">Submit</button>
+      </form>
+    </div>
 
-      <button>Submit</button>
 
-    </form>
+    <div id="modal-ong" style="display: none;">
+      <form action="" method="post">
+        {{ registerOng.csrf_token }}
+        
+        {{ registerOng.nome (placeholder='nome') }}
+        {{ registerOng.email (placeholder='email') }}
+        {{ registerOng.endereco (placeholder='endereco') }}
+        {{ registerOng.cnpj (placeholder='cnpj') }}
+        {{ registerOng.password (placeholder='password') }}
+        <button type="submit" name="form_type" value="ong">Submit</button>
+      </form>
+    </div>
+
+
+    <div id="modal-instituicao" style="display: none;">
+      <form action="" method="post">
+        {{ registerInstituicao.csrf_token }}
+        
+        {{ registerInstituicao.nome (placeholder='nome') }}
+        {{ registerInstituicao.email (placeholder='email') }}
+        {{ registerInstituicao.endereco (placeholder='endereco') }}
+        {{ registerInstituicao.cnpj (placeholder='cnpj') }}
+        {{ registerInstituicao.tipo (placeholder='tipo') }}
+        {{ registerInstituicao.password (placeholder='password') }}
+        <button type="submit" name="form_type" value="instituicao">Submit</button>
+      </form>
+    </div>
   </div>
+
+  <div id="modal-login" style="display: none;">
+    <form action="" method="post">
+      {{ login_form.csrf_token }}
+
+      {{ login_form.email (placeholder='email') }}
+      {{ login_form.password (placeholder='password') }}
+
+      <button type="submit" name="form_type" value="login">submit</button>
+    </form>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

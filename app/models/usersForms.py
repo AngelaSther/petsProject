@@ -19,7 +19,7 @@ class registroOrganizacoesMixin():
 
 # REGISTRO PESSOAS
 
-class registroTutores(registroPessoasMixin ,FlaskForm):
+class registroTutores(registroPessoasMixin, FlaskForm):
   endereco = StringField("endereco", validators=[DataRequired()])
   password = PasswordField("password", validators=[DataRequired()])
 
@@ -29,9 +29,15 @@ class registroRepresentantes(registroPessoasMixin ,FlaskForm):
 
 # REGISTRO ORGANIZAÇÕES
 
-class registroOngs(registroOrganizacoesMixin ,FlaskForm):
-  membros_num = IntegerField("membros_num", validators=[DataRequired()])
-  animais_num = IntegerField("animais_num", validators=[DataRequired()])
+class registroOngs(registroOrganizacoesMixin, FlaskForm):
+  membros_num = IntegerField("membros_num")
+  animais_num = IntegerField("animais_num")
 
-class registroInstituicoes(registroOrganizacoesMixin ,FlaskForm):
+class registroInstituicoes(registroOrganizacoesMixin, FlaskForm):
   tipo = StringField("tipo", validators=[DataRequired()])
+
+# LOGIN
+
+class login(FlaskForm):
+  email = StringField("email", validators=[DataRequired()])
+  password = PasswordField("password", validators=[DataRequired()])

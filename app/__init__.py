@@ -10,5 +10,5 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-from app.models import table, usersForms
-from app.controllers import login
+from app.models import table, usersForms, petsForms
+from app.controllers import login, tutor

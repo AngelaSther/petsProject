@@ -26,8 +26,8 @@ class Pet(db.Model):
 
   id_pet = db.Column(db.Integer, primary_key=True)
   nome = db.Column(db.String(80), nullable=False)
-  especie = db.Column(db.String, unique=True, nullable=False)
-  raca = db.Column(db.Integer)
+  especie = db.Column(db.String, nullable=False)
+  raca = db.Column(db.String)
   sexo = db.Column(db.String, nullable=False)
   idade = db.Column(db.Integer)
   foto = db.Column(db.String)
@@ -104,8 +104,8 @@ class Ong(db.Model):
   senha = db.Column(db.String, nullable=False)
   cnpj = db.Column(db.Integer, unique=True)
   endereco = db.Column(db.String, nullable=False)
-  membros_num = db.Column(db.Integer)
-  animais_num = db.Column(db.Integer)
+  membros_num = db.Column(db.Integer, nullable=True)
+  animais_num = db.Column(db.Integer, nullable=True)
   
   def __init__(self, nome, email, senha, cnpj, endereco, membros_num, animais_num):
     self.nome = nome
@@ -215,4 +215,4 @@ class CartaoVacina(db.Model):
   def __repr__(self):
     return "<Nome vacina: %r>" % self.nome
   
-# talvez criar um enum para por os id dos animais para o cartao de vacinas e os id das ongs e instituicoes para as campanhas, reduzir as opcoes para apenas essas duas
+# talvez criar um enum para por os id dos animais para o cartao de vacinas e os id das ongs e instituicoes para as campanhas, reduzir as opcoes para apenas essas duas Nao da certo

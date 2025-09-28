@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section class="options">
+    <img src="" alt="" id="perfil">
+
+    <div id="options">
+      <a href="">perfil</a>
+      <button id="add-pet-btn">add pet
+      </button>
+      <a href="">doar</a>
+      <a href="">dashboard</a>
+      <a href="">sair</a>
+    </div>
+
+  </section>
+
+  <!-- MODAL -->
+
+  <div id="add-pet-modal" style="display: none;">
+    <form action="" method="post">
+      {{ registerPet.csrf_token }}
+
+      {{ registerPet.nome (placeholder='nome') }}
+      {{ registerPet.especie (placeholder='especie') }}
+      {{ registerPet.raca (placeholder='raca') }}
+      {{ registerPet.sexo (placeholder='sexo') }}
+      {{ registerPet.idade (placeholder='idade') }}
+      <label for="">Foto</label>
+      {{ registerPet.foto (label='foto') }}
+      
+      <button id="add-pet-btn">submit</button>
+    </form>
+  </div>
+  
+  <section class="dashboard"></section>
+  <section class="noti-pet"></section>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

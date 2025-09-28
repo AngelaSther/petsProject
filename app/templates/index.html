@@ -6,9 +6,12 @@
   <title>Document</title>
 </head>
 <body>
+  <a href="/register?tipo=login" class="login_header">login</a>
   <h2>Choose</h2>
-  <a href="{{ url_for('registroTutor') }}" class="tutor">Tutor</a>
-  <a href="" class="ong">Ong</a>
-  <a href="" class="instit">Instituição</a>
+  <a href="/register?tipo=tutor" class="tutor">Tutor</a>
+  <a href="/register?tipo=ong" class="ong">Ong</a>
+  <a href="/register?tipo=instituicao" class="instituicao">Instituição</a>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
