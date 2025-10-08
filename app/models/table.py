@@ -45,7 +45,7 @@ class Pet(db.Model):
     self.id_tutor = id_tutor
 
   def __repr__(self):
-    return "<Nome do pet: %r>" % self.nome_pet
+    return "<Nome do pet: %r>" % self.nome
 
 tipo_enum = ENUM(
   'ong', 'instituicao',

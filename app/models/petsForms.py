@@ -7,7 +7,7 @@ class registroPetMixin(FlaskForm):
   nome = StringField("nome", validators=[DataRequired()])
   especie = StringField("especie", validators=[DataRequired()])
   raca = StringField("raca", validators=[DataRequired()])
-  sexo = StringField("sexo", validators=[DataRequired()])
+  sexo = SelectField("sexo", choices=[('', 'Sexo') ,('masculino', 'Masculino'), ('feminino', 'Feminino')], validators=[DataRequired()])
   idade = IntegerField("idade")
   foto = FileField("Foto")
 

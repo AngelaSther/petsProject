@@ -23,7 +23,7 @@
   <!-- MODAL -->
 
   <div id="add-pet-modal" style="display: none;">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
       {{ registerPet.csrf_token }}
 
       {{ registerPet.nome (placeholder='nome') }}
@@ -32,14 +32,32 @@
       {{ registerPet.sexo (placeholder='sexo') }}
       {{ registerPet.idade (placeholder='idade') }}
       <label for="">Foto</label>
-      {{ registerPet.foto (label='foto') }}
+      {{ registerPet.foto (placeholder='foto') }}
       
       <button id="add-pet-btn">submit</button>
     </form>
   </div>
   
   <section class="dashboard"></section>
-  <section class="noti-pet"></section>
+
+  <section class="noti-pet">
+    <div class="notificacoes"></div>
+
+    <div class="pet-info">
+      {% for pet in petInfo %}
+        {% if pet.foto %}
+          <img src="{{ url_for('static', filename='uploads/' + pet.foto) }}" alt="mini-foto-do-pet" id="pet-foto" style="height: 150px;">
+        {% else %}
+          <img src="{{ url_for('static', filename='uploads/default.png') }}" alt="mini-foto-do-pet" id="pet-foto" style="height: 150px;">
+        {% endif %}
+      <div>
+        <h3>{{ pet.nome }}</h3>
+        <p>Descrição/ ainda não sei</p>
+      </div>
+      <a href=""><img src="" alt=""></a>
+      </div>
+      {% endfor %}
+  </section>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
