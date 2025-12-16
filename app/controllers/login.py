@@ -84,11 +84,9 @@ def registro():
         session['tutor']=validarTutor.id_tutor
         return redirect(url_for('tutores'))
       elif validarOng:
-        print('Ong validada!')
-        # return redirect(url_for('tutores'))
+        return redirect(url_for('ongs'))
       elif validarInstituicao:
-        print('instituição validada!')
-        # return redirect(url_for('tutores'))
+        return redirect(url_for('instituicoes'))
       else:
         print('viushh')
 

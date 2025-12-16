@@ -3,14 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+  <title>Petzi | Landing Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style-index.css') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a href="/register?tipo=login" class="login_header">login</a>
-  <h2>Choose</h2>
-  <a href="/register?tipo=tutor" class="tutor">Tutor</a>
-  <a href="/register?tipo=ong" class="ong">Ong</a>
-  <a href="/register?tipo=instituicao" class="instituicao">Instituição</a>
+  <header class="header">
+    <div class="logo">Petzi</div>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#contato">Contato</a>
+      <a href="/register?tipo=login" class="login_header">login</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Welcome to <br><span class="brand" style="font-size: 5rem;">Petzi</span></h1>
+        <p>
+        Conectamos tutores, ONGs e instituições de saúde animal em uma única plataforma. Encontre campanhas de vacinação, castração e adoção próximas de você.
+        </p>
+        <a href="#" class="btn btn-secondary">Faça parte</a>
+      </div>
+      <img src="{{ url_for('static', filename='imgs/pet01.png') }}" alt="Pets felizes" class="hero-img" style="width: 28rem;">
+    </section>
+
+
+  <section id="sobre" class="about">
+    <div class="section-title">
+      <h2>Quem somos</h2>
+      <p>Acreditamos que cada animal merece um lar cheio de amor.</p>
+    </div>
+    <div class="about-content">
+      <img src="{{ url_for('static', filename='imgs/3.jpg') }}" alt="Sobre nós" style="width: 26rem;">
+      <p>
+      Somos um grupo apaixonado por animais e tecnologia, unidos pela missão de facilitar o encontro entre tutores, ONGs e instituições. Criamos uma rede de cuidado, apoio e informação para transformar vidas.
+      </p>
+    </div>
+  </section>
+
+  <section id="servicos" class="services">
+    <div class="section-title">
+      <h2>Nossos Serviços</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Cadastro e gerenciamento de pets</h3>
+        <p>Histórico de vacinas, tratamentos e cuidados sempre organizados.</p>
+      </div>
+      <div class="card">
+        <h3>Eventos e campanhas</h3>
+        <p>Feiras de adoção, vacinação e ações de conscientização.</p>
+      </div>
+      <div class="card">
+        <h3>Adoção responsável</h3>
+        <p>Processos seguros, transparentes e cheios de amor.</p>
+      </div>
+      <div class="card">
+        <h3>Suporte e orientações</h3>
+        <p>Dicas sobre saúde, alimentação e bem-estar animal.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="choose">
+    <h2>Resgistre-se</h2>
+    <p>Junte-se a quem acredita que todo animal merece cuidado e proteção.
+  Cadastre-se e faça parte dessa rede de cuidado.</p>
+    <div class="choose-cards">
+      <a href="/register?tipo=tutor" class="tutor">Tutor
+        <h3>Tutor</h3>
+        <p>Cadastre seus pets e acompanhe vacinas e campanhas.</p>
+      </a>
+      
+      <a href="/register?tipo=ong" class="ong">Ong
+        <h3>ONG</h3>
+        <p>Divulgue animais para adoção e participe de campanhas.</p>
+      </a>
+
+      <a href="/register?tipo=instituicao" class="instituicao">Instituição
+        <h3>Instituição</h3>
+        <p>Gerencie campanhas de saúde e ações comunitárias.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <div class="section-title">
+      <h2>Entre em contato</h2>
+    </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Seu nome" />
+        <input type="email" placeholder="Seu e-mail" />
+        <input type="tel" placeholder="Seu telefone" />
+        <textarea rows="4" placeholder="Sua mensagem"></textarea>
+        <button type="submit" class="btn btn-secondary">Enviar</button>
+    </form>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <h4>Petzi</h4>
+      <p>Conectando pessoas e animais.</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <a href="#">Home</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+    </div>
+      <div>
+      <h4>Legal</h4>
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </footer>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

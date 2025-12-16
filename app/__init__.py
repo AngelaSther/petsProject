@@ -11,4 +11,4 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 from app.models import table, usersForms, petsForms
-from app.controllers import login, tutor
+from app.controllers import login, tutor, ong, instituicao
