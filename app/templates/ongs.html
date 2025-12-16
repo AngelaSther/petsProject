@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ongs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petzi - Dashboard ONG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-ongs.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  Ongs
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="petzi-title">Petzi</span><span class="profile-tag">ONG</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active">
+                        <i class="fas fa-home"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-paw"></i>
+                        <span>Animais para Adoção</span> </li>
+                    <li class="nav-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Eventos e Campanhas</span> </li>
+                    <li class="nav-item">
+                        <i class="fas fa-notes-medical"></i>
+                        <span>Cartão Vacinação</span> </li>
+                    <li class="nav-item">
+                        <i class="fas fa-search"></i>
+                        <span>Buscar Serviços</span> </li>
+                    <li class="nav-item separator">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Meu Perfil</span>
+                    </li>
+                    <li class="nav-item logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Sair</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Bem-vindo(a) à Área da ONG!</h2>
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Nome da ONG</span>
+                </div>
+            </header>
+
+            <section class="dashboard-overview">
+                <h3>Resumo de Adoções e Eventos</h3>
+                <div class="stats-grid">
+                    <div class="stat-card yellow">
+                        <h4>Animais Cadastrados</h4>
+                        <p>45</p>
+                        <i class="fas fa-dog"></i>
+                    </div>
+                    <div class="stat-card orange">
+                        <h4>Adoções Concluídas (Mês)</h4>
+                        <p>7</p>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-card yellow">
+                        <h4>Próximo Evento</h4>
+                        <p>Feira de Adoção (20/Dez)</p>
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-actions">
+                <h3>Ações Rápidas</h3>
+                <div class="action-buttons">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Novo Animal</button> <button class="btn btn-secondary"><i class="fas fa-bullhorn"></i> Criar Novo Evento</button> <button class="btn btn-secondary"><i class="fas fa-address-book"></i> Ver Contatos de Adoção</button> </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>

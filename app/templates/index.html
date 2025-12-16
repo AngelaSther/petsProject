@@ -37,18 +37,31 @@
     </section>
 
 
-  <section id="sobre" class="about">
-    <div class="section-title">
-      <h2>Quem somos</h2>
-      <p>Acreditamos que cada animal merece um lar cheio de amor.</p>
-    </div>
-    <div class="about-content">
-      <img src="{{ url_for('static', filename='imgs/3.jpg') }}" alt="Sobre nós" style="width: 26rem;">
-      <p>
-      Somos um grupo apaixonado por animais e tecnologia, unidos pela missão de facilitar o encontro entre tutores, ONGs e instituições. Criamos uma rede de cuidado, apoio e informação para transformar vidas.
-      </p>
-    </div>
-  </section>
+    <section id="sobre" class="about">
+        <div class="section-title">
+            <h2>Quem Somos</h2>
+            <p>Conectando corações, transformando vidas animais.</p>
+        </div>
+        
+        <div class="about-card-container">
+            <div class="about-content">
+                <img src="{{ url_for('static', filename='imgs/pet02.png') }}" alt="Sobre nós - Pets felizes" style="width: 26rem;">
+                
+                <div class="about-text-block">
+                    <blockquote class="mission-quote">
+                        Acreditamos que todo animal merece um lar cheio de amor e proteção.
+                    </blockquote>
+                    <p>
+                        A Petzi nasceu da paixão por cães e gatos e da necessidade de criar uma ponte digital eficiente entre tutores, ONGs, clínicas veterinárias e órgãos públicos. Somos mais que uma plataforma; somos uma rede de cuidado focada em saúde preventiva, adoção responsável e na organização de campanhas essenciais para a comunidade.
+                    </p>
+                    <p>
+                        Nosso projeto é mover a causa animal, facilitando o acesso ao cartão de vacinação digital, a feirinhas de adoção e a eventos de castração. Junte-se a nós para garantir o bem-estar animal em sua cidade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+  
 
   <section id="servicos" class="services">
     <div class="section-title">
@@ -75,10 +88,12 @@
     </div>
   </section>
 
-  <section class="choose">
-    <h2>Resgistre-se</h2>
-    <p>Junte-se a quem acredita que todo animal merece cuidado e proteção.
-  Cadastre-se e faça parte dessa rede de cuidado.</p>
+  <section id="registro" class="choose">
+    <div class="section-title">
+      <h2>Resgistre-se</h2>
+      <p>Junte-se a quem acredita que todo animal merece cuidado e proteção.
+        Cadastre-se e faça parte dessa rede de cuidado.</p>
+    </div>
     <div class="choose-cards">
       <a href="/register?tipo=tutor" class="tutor">Tutor
         <h3>Tutor</h3>

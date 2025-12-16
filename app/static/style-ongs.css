@@ -1,0 +1,223 @@
+/* Variáveis de Cores da Identidade Visual Petzi */
+:root {
+    --color-primary: #FFC300; /* Amarelo/Laranja claro do wireframe */
+    --color-secondary: #FF8C00; /* Laranja mais escuro para destaque */
+    --color-background: #f4f4f9;
+    --color-text: #333;
+    --color-white: #ffffff;
+}
+
+/* Base Reset e Tipografia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 1. SIDEBAR (NAVEGAÇÃO LATERAL) */
+.sidebar {
+    width: 250px;
+    background-color: var(--color-white);
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    padding: 0 20px 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-text);
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: baseline;
+}
+
+.petzi-title {
+    color: var(--color-primary); /* Cor do título 'Petzi' */
+}
+
+.profile-tag {
+    font-size: 0.8rem;
+    font-weight: normal;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.nav-item.active i {
+    color: var(--color-white);
+}
+
+.nav-item.logout {
+    margin-top: auto; /* Empurra para o final da sidebar */
+    color: #cc0000;
+}
+
+.nav-item.logout:hover {
+    background-color: #cc0000;
+    color: var(--color-white);
+}
+
+/* 2. MAIN CONTENT (CONTEÚDO PRINCIPAL) */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+}
+
+.main-header h2 {
+    font-size: 1.8rem;
+    color: var(--color-text);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.user-info i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: var(--color-secondary);
+}
+
+/* Seções do Dashboard */
+.dashboard-overview {
+    margin-bottom: 40px;
+}
+
+.dashboard-overview h3, .quick-actions h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card.yellow {
+    border-left: 5px solid var(--color-primary);
+}
+
+.stat-card.orange {
+    border-left: 5px solid var(--color-secondary);
+}
+
+.stat-card h4 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.stat-card i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 3rem;
+    color: rgba(255, 195, 0, 0.2); /* Ícones de fundo transparentes */
+}
+
+/* Botões de Ação Rápida */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: #cc7000;
+}
+
+.btn-secondary {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
