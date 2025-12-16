@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 
 from sqlalchemy.exc import IntegrityError
 from app.models.petsForms import registroPetMixin
-from app.models.table import Pet
+from app.models.table import Pet, Tutor, CartaoVacina
 
 @app.route('/tutor', methods=["GET", "POST"])
 def tutores():
@@ -44,8 +44,28 @@ def tutores():
 
     # INFO-PETS
 
-  # petInfo = Pet.query.filter(Pet.nome.isnot(None), Pet.foto.isnot(None)).all()
   petInfo = Pet.query.filter(Pet.id_tutor==tutorID).all()
-  print(petInfo)
+  tutorInfo = Tutor.query.filter(Tutor.id_tutor==tutorID).all()
 
   return render_template('tutores.html', registerPet=registerPet, petInfo=petInfo)
+
+@app.route('/perfil', methods=["GET", "POST"])
+def perfil():
+  tutorID = session.get('tutor')
+  tipo = request.args.get('tipo')
+  cartaoInfo = []
+
+  tutorInfo = Tutor.query.filter(Tutor.id_tutor==tutorID).first()
+  petInfo = Pet.query.filter(Pet.nome==tipo).first()
+
+  if petInfo:
+    if tipo == petInfo.nome:
+      print(petInfo)
+      cartaoInfo = CartaoVacina.query.filter(CartaoVacina.id_animal==petInfo.id_pet).all()
+  else:
+    print('tem não man')
+
+  if tutorInfo:
+    print('sei la')
+  
+  return render_template('tutores-pets-perfil.html', tipo=tipo, tutorInfo=tutorInfo, petInfo=petInfo, cartaoInfo=cartaoInfo)

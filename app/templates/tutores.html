@@ -7,15 +7,15 @@
 </head>
 <body>
   <section class="options">
-    <img src="" alt="" id="perfil">
+    <img src="" alt="" id="perfilTutor">
 
     <div id="options">
-      <a href="">perfil</a>
+      <a href="/perfil?tipo=perfil-tutor">perfil</a>
       <button id="add-pet-btn">add pet
       </button>
       <a href="">doar</a>
-      <a href="">dashboard</a>
-      <a href="">sair</a>
+      <a href="{{ url_for('tutores') }}">dashboard</a>
+      <a href="{{ url_for('home') }}">sair</a>
     </div>
 
   </section>
@@ -51,11 +51,12 @@
           <img src="{{ url_for('static', filename='uploads/default.png') }}" alt="mini-foto-do-pet" id="pet-foto" style="height: 150px;">
         {% endif %}
       <div>
-        <h3>{{ pet.nome }}</h3>
+        <a href=""><h3>{{ pet.nome }}</h3></a>
         <p>Descrição/ ainda não sei</p>
       </div>
-      <a href=""><img src="" alt=""></a>
-      </div>
+
+      <a href="/perfil?tipo={{ pet.nome }}" id="vacinaBtn">Ir para pet</a>
+    </div>
       {% endfor %}
   </section>
 

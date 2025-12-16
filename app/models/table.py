@@ -200,7 +200,9 @@ class CartaoVacina(db.Model):
   lote = db.Column(db.Integer, nullable=False)
   assinatura = db.Column(db.String, nullable=False)
   obs = db.Column(db.String)
-  id_animal = db.Column(db.String, nullable=False, unique=True)
+  id_animal = db.Column(db.Integer, nullable=False)
+
+  # Talvez tenha de reescreber id_animal
   
   def __init__(self, nome, dose, data, data_reforco, lote, assinatura, obs, id_animal):
     self.nome = nome

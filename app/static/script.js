@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if(tipo === "ong") document.getElementById('modal-ong').style.display='flex';
   if(tipo === "instituicao") document.getElementById('modal-instituicao').style.display='flex';
   if(tipo === "login") document.getElementById('modal-login').style.display='flex';
+
+  // PAGINA TUTORES
+
+  if(tipo === "perfil-tutor") document.getElementById('perfil').style.display='flex';  
 });
 
 // REGISTRO PETS PÁGINA TUTOR

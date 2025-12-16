@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body data-tipo="{{ tipo }}">
+  <section class="options">
+    <img src="" alt="foto-perfil">
+
+    <div id="options">
+      <a href="">perfil</a>
+      <button id="add-pet-btn">add pet
+      </button>
+      <a href="">doar</a>
+      <a href="{{ url_for('tutores') }}">dashboard</a>
+      <a href="{{ url_for('home') }}">sair</a>
+    </div>
+
+  </section>
+
+  <div id="perfil" style="display: none;">
+    <div class="perfil">
+      <img src="" alt="foto-perfil">
+      <h3>{{ tutorInfo.nome }}</h3>
+      <p>Email: {{ tutorInfo.email }}</p>
+      <p>CPF: {{ tutorInfo.cpf }}</p>
+      <p>Endereço: {{ tutorInfo.endereco }}</p>
+    </div>
+  </div>
+
+<!-- Carteira e info dos pets, os cards já meio que estão no dashboard -->
+
+{% if petInfo %}
+  <div id="pets" style="display: flex;">
+    <div class="pets">
+      <img src="" alt="foto">
+      <h3>Nome: {{ petInfo.nome }}</h3>
+      <p>Idade: {{ petInfo.idade }}</p>
+      <p>Especie: {{ petInfo.especie }}</p>
+      <p>Raça: {{ petInfo.raca }}</p>
+      <p>Sexo: {{ petInfo.sexo }}</p>
+    </div>
+
+    <div id="cartao">
+      <h2>Cartão de vacina</h2>
+      {% for info in cartaoInfo %}
+      <tr>
+        <td>tipo/nome: {{ info.nome }}</td>
+        <td>dose: {{ info.dose }}</td>
+        <td>data: {{ info.data }}</td>
+        <td>data reforço: {{ info.data_reforco }}</td>
+        <td>lote: {{ info.lote }}</td>
+        <td>assinatura: {{ info.assinatura }}</td>
+        <td>obs: {{ info.obs }}</td>
+        <br>
+        <!-- Só por enquanto -->
+      </tr>
+      {% endfor %}
+    </div>
+    
+  </div>
+{% endif %}
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
