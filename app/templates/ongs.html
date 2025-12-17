@@ -1,84 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petzi - Dashboard ONG</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style-ongs.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
     <div class="dashboard-container">
         <aside class="sidebar">
-            <div class="logo">
-                <span class="petzi-title">Petzi</span><span class="profile-tag">ONG</span>
-            </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li class="nav-item active">
-                        <i class="fas fa-home"></i>
-                        <span>Dashboard</span>
-                    </li>
-                    <li class="nav-item">
-                        <i class="fas fa-paw"></i>
-                        <span>Animais para Adoção</span> </li>
-                    <li class="nav-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Eventos e Campanhas</span> </li>
-                    <li class="nav-item">
-                        <i class="fas fa-notes-medical"></i>
-                        <span>Cartão Vacinação</span> </li>
-                    <li class="nav-item">
-                        <i class="fas fa-search"></i>
-                        <span>Buscar Serviços</span> </li>
-                    <li class="nav-item separator">
-                        <i class="fas fa-user-circle"></i>
-                        <span>Meu Perfil</span>
-                    </li>
-                    <li class="nav-item logout">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Sair</span>
-                    </li>
-                </ul>
+            <h1 class="logo">Petzi</h1>
+            <nav>
+                <a href="#" class="active"><i class="fas fa-paw"></i> Meus Animais</a>
+                <a href="#"><i class="fas fa-heart"></i> Pedidos de Adoção</a>
+                <a href="#"><i class="fas fa-calendar-alt"></i> Eventos</a>
+                <a href="#"><i class="fas fa-hand-holding-heart"></i> Doações</a>
+                <a href="#"><i class="fas fa-cog"></i> Definições</a>
+                <a href="{{ url_for('home') }}" class="logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
             </nav>
         </aside>
 
         <main class="main-content">
             <header class="main-header">
-                <h2>Bem-vindo(a) à Área da ONG!</h2>
-                <div class="user-info">
-                    <i class="fas fa-user-circle"></i>
-                    <span>Nome da ONG</span>
+                <div class="header-left">
+                    <h2>Olá, ONG Esperança!</h2>
+                    <p>Tens 3 novos pedidos de adoção para rever.</p>
+                </div>
+                
+                <div class="header-right">
+                    <div class="notifications-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notify-badge">3</span>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-text">
+                            <span class="user-name">Cláudia Silva</span>
+                            <span class="user-role">Gestora</span>
+                        </div>
+                        <img src="https://via.placeholder.com/48" alt="Perfil" class="avatar">
+                    </div>
                 </div>
             </header>
 
-            <section class="dashboard-overview">
-                <h3>Resumo de Adoções e Eventos</h3>
-                <div class="stats-grid">
-                    <div class="stat-card yellow">
-                        <h4>Animais Cadastrados</h4>
-                        <p>45</p>
-                        <i class="fas fa-dog"></i>
-                    </div>
-                    <div class="stat-card orange">
-                        <h4>Adoções Concluídas (Mês)</h4>
-                        <p>7</p>
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <div class="stat-card yellow">
-                        <h4>Próximo Evento</h4>
-                        <p>Feira de Adoção (20/Dez)</p>
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                </div>
-            </section>
+            <div class="dashboard-grid">
+                <div class="main-column">
+                    <section class="stats-grid">
+                        <div class="stat-card">
+                            <h3>Animais Abrigados</h3>
+                            <p class="number">24</p>
+                            <span class="subtext">15 Cães | 9 Gatos</span>
+                        </div>
+                        <div class="stat-card yellow">
+                            <h3>Adoções (Mês)</h3>
+                            <p class="number">08</p>
+                            <span class="subtext">+2 em relação ao mês anterior</span>
+                        </div>
+                    </section>
 
-            <section class="quick-actions">
-                <h3>Ações Rápidas</h3>
-                <div class="action-buttons">
-                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Novo Animal</button> <button class="btn btn-secondary"><i class="fas fa-bullhorn"></i> Criar Novo Evento</button> <button class="btn btn-secondary"><i class="fas fa-address-book"></i> Ver Contatos de Adoção</button> </div>
-            </section>
+                    <section class="animals-section">
+                        <div class="section-header">
+                            <h3>Animais Disponíveis</h3>
+                            <button class="btn-add"><i class="fas fa-plus"></i> Novo Cadastro</button>
+                        </div>
+                        <div class="animal-list">
+                            <div class="animal-mini-card">
+                                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=100" alt="Pipoca">
+                                <div class="animal-info">
+                                    <h4>Pipoca</h4>
+                                    <span>Cão • 4 meses</span>
+                                    <span class="status-tag disponivel">Disponível</span>
+                                </div>
+                                <button class="btn-edit-mini"><i class="fas fa-edit"></i></button>
+                            </div>
+                            <div class="animal-mini-card">
+                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=100" alt="Mia">
+                                <div class="animal-info">
+                                    <h4>Mia</h4>
+                                    <span>Gato • 1 ano</span>
+                                    <span class="status-tag tratamento">Em Tratamento</span>
+                                </div>
+                                <button class="btn-edit-mini"><i class="fas fa-edit"></i></button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="side-column">
+                    <div class="side-card notification-panel">
+                        <h3>Notificações</h3>
+                        <div class="notification-list">
+                            <div class="notification-item">
+                                <div class="icon-circle"><i class="fas fa-file-signature"></i></div>
+                                <div class="notif-content">
+                                    <p><strong>Nova Proposta:</strong> O Pipoca recebeu um pedido de adoção.</p>
+                                    <small>Há 15 min</small>
+                                </div>
+                            </div>
+                            <div class="notification-item urgent">
+                                <div class="icon-circle"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div class="notif-content">
+                                    <p><strong>Urgência:</strong> O Thor precisa da vacina V10 hoje.</p>
+                                    <small>Há 2 horas</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="side-card goal-panel">
+                        <h3>Stock de Ração</h3>
+                        <div class="goal-item">
+                            <div class="goal-text">
+                                <span>Meta: 500kg</span>
+                                <span>40%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="fill" style="width: 40%;"></div>
+                            </div>
+                            <p class="goal-desc">Faltam 300kg para o fim do mês.</p>
+                        </div>
+                        <button class="btn-secondary-outline">Criar Campanha</button>
+                    </div>
+                </aside>
+            </div>
         </main>
     </div>
+
 </body>
 </html>

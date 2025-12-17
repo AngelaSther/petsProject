@@ -1,11 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instituições</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petzi - Dashboard Institucional</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style-instituicoes.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script> 
 </head>
 <body>
-  Instituições
+
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <h1 class="logo">Petzi</h1>
+        <nav>
+            <a href="#" class="active"><i class="fas fa-chart-line"></i> Painel</a>
+            <a href="#"><i class="fas fa-calendar-plus"></i> Campanhas</a>
+            <a href="#"><i class="fas fa-user-md"></i> Veterinários</a>
+            <a href="#"><i class="fas fa-syringe"></i> Cartão de Vacina</a>
+            <a href="#"><i class="fas fa-pills"></i> Estoque</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="main-header">
+            <div>
+                <h2>Olá, Clínica Vida Animal</h2>
+                <p>Gestão de saúde e campanhas públicas.</p>
+            </div>
+            <div class="user-info">
+                <div class="user-text">
+                    <span class="user-name">Dr. Ricardo Melo</span>
+                    <span class="user-role">Administrador</span>
+                </div>
+                <img src="https://via.placeholder.com/45" alt="Perfil" class="avatar">
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Consultas Agendadas</h3>
+                <p class="number">12</p>
+                <span class="badge">Hoje</span>
+            </div>
+            <div class="stat-card yellow">
+                <h3>Estoque Vacinas</h3>
+                <p class="number">42</p>
+                <span class="trend down">Necessita reposição</span>
+            </div>
+            <div class="stat-card orange">
+                <h3>Meta de Castração</h3>
+                <p class="number">75%</p>
+                <div class="progress-bar"><div class="fill" style="width: 75%;"></div></div>
+            </div>
+        </section>
+
+        <section class="clinical-management">
+            <div class="card-header">
+                <h3><i class="fas fa-search"></i> Consulta Rápida de Cartão</h3>
+                <div class="search-bar">
+                    <input type="text" placeholder="Digite o ID do microchip ou nome do pet...">
+                    <button class="btn-search">Consultar Histórico</button>
+                </div>
+            </div>
+
+            <div class="actions-grid">
+                <div class="action-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <h4>Nova Campanha</h4>
+                    <p>Crie eventos de vacinação em massa.</p>
+                    <button class="btn-action">Configurar</button>
+                </div>
+                <div class="action-item">
+                    <i class="fas fa-user-plus"></i>
+                    <h4>Equipe Técnica</h4>
+                    <p>Cadastre novos veterinários.</p>
+                    <button class="btn-action">Gerenciar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="table-container">
+            <div class="table-header">
+                <h3>Próximos Procedimentos</h3>
+                <a href="#" class="view-all">Ver todos</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Animal / Tutor</th>
+                        <th>Procedimento</th>
+                        <th>Veterinário</th>
+                        <th>Horário</th>
+                        <th>Status</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Rex</strong><br>
+                            <small>Carlos Silva</small>
+                        </td>
+                        <td>Vacina Antirrábica</td>
+                        <td>Dra. Ana Paula</td>
+                        <td>14:30</td>
+                        <td><span class="status confirmada">Confirmado</span></td>
+                        <td><button class="btn-table">Atualizar Cartão</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Luna</strong><br>
+                            <small>Mariana Luz</small>
+                        </td>
+                        <td>Castração</td>
+                        <td>Dr. Marcos</td>
+                        <td>16:00</td>
+                        <td><span class="status pendente">Pendente</span></td>
+                        <td><button class="btn-table">Ver Detalhes</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
 </body>
 </html>
