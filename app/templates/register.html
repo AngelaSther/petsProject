@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style-register-login.css') }}">
   <title>Cadastro</title>
 </head>
 <body data-tipo="{{ tipo_modal }}">
@@ -11,10 +13,18 @@
       <form action="" method="post">
         {{ register.csrf_token }}
 
+        <h2>Petzi</h2>
+        <p>Conectando corações, transformando vidas animais.</p>
+
+        <label>Nome</label>
         {{ register.username (placeholder='username') }}
+        <label>E-mail</label>
         {{ register.email (placeholder='email') }}
+        <label>CPF</label>
         {{ register.cpf (placeholder='cpf') }}
+        <label>Endereço</label>
         {{ register.endereco (placeholder='endereco') }}
+        <label>Senha</label>
         {{ register.password (placeholder='password') }}
         <button type="submit" name="form_type" value="tutor">Submit</button>
       </form>
@@ -24,11 +34,19 @@
     <div id="modal-ong" style="display: none;">
       <form action="" method="post">
         {{ registerOng.csrf_token }}
-        
+
+        <h2>Petzi</h2>
+        <p>Conectando corações, transformando vidas animais.</p>
+
+        <label>Nome</label>
         {{ registerOng.nome (placeholder='nome') }}
+        <label>E-mail</label>
         {{ registerOng.email (placeholder='email') }}
+        <label>Endereço</label>
         {{ registerOng.endereco (placeholder='endereco') }}
+        <label>CNPJ</label>
         {{ registerOng.cnpj (placeholder='cnpj') }}
+        <label>Senha</label>
         {{ registerOng.password (placeholder='password') }}
         <button type="submit" name="form_type" value="ong">Submit</button>
       </form>
@@ -38,27 +56,42 @@
     <div id="modal-instituicao" style="display: none;">
       <form action="" method="post">
         {{ registerInstituicao.csrf_token }}
-        
+
+        <h2>Petzi</h2>
+        <p>Conectando corações, transformando vidas animais.</p>
+
+        <label>Nome</label>
         {{ registerInstituicao.nome (placeholder='nome') }}
+        <label>E-mail</label>
         {{ registerInstituicao.email (placeholder='email') }}
+        <label>Endereço</label>
         {{ registerInstituicao.endereco (placeholder='endereco') }}
+        <label>CNPJ</label>
         {{ registerInstituicao.cnpj (placeholder='cnpj') }}
+        <label>Tipo</label>
         {{ registerInstituicao.tipo (placeholder='tipo') }}
+        <label>Senha</label>
         {{ registerInstituicao.password (placeholder='password') }}
         <button type="submit" name="form_type" value="instituicao">Submit</button>
       </form>
     </div>
+  
+    <div id="modal-login" style="display: none;">
+      <img src="{{ url_for('static', filename='imgs/pet03.png') }}" alt="">
+      
+      <form action="" method="post">
+        <h2>Petzi</h2>
+        <p>Conectando corações, transformando vidas animais.</p>
+        {{ login_form.csrf_token }}
+        <label class="label">E-mail</label>
+        {{ login_form.email (placeholder='email') }}
+        <label class="label">Senha</label>
+        {{ login_form.password (placeholder='password') }}
+        <button type="submit" name="form_type" value="login">submit</button>
+      </form>
+
+    </div>
   </div>
-
-  <div id="modal-login" style="display: none;">
-    <form action="" method="post">
-      {{ login_form.csrf_token }}
-
-      {{ login_form.email (placeholder='email') }}
-      {{ login_form.password (placeholder='password') }}
-
-      <button type="submit" name="form_type" value="login">submit</button>
-    </form>
 
   <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
